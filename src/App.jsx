@@ -21,7 +21,7 @@ function App() {
     <>
       <Sidebar/>
       <LoadingScreen />
-      <BrowserRouter basename="/queviquev.github.io">      
+      <BrowserRouter basename={import.meta.env.BASE_URL}>      
         <Routes>
           <Route path="/" element={<Intro />} />
           <Route path="/about" element={<About />} />
