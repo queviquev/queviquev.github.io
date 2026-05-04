@@ -246,6 +246,14 @@
     text-align: left;
   }
 
+  .portfolio-header {
+    position: relative;
+    top: auto;
+    z-index: auto;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
   .left .timeline-date,
   .right .timeline-date {
     left: auto;
