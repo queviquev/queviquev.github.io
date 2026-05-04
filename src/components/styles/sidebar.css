@@ -1,0 +1,131 @@
+/* Sidebar Styling */
+.sidebar {
+  background: linear-gradient(
+    to left,
+    rgba(26, 21, 48, 0.95),
+    rgba(13, 11, 30, 0.95)
+  ) !important; /* Transparent gradient */
+  color: var(--text-primary) !important;
+  width: 250px !important;
+  box-shadow: 2px 0 10px rgba(139, 92, 246, 0.3) !important;
+  display: flex !important; /* Always flex for layout */
+  flex-direction: column !important; /* Vertical list */
+  opacity: 0 !important; /* Transparent by default */
+  visibility: visible !important; /* Keep in DOM for animation */
+  transform: translateX(-100%) !important; /* Off-screen to the left */
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease !important; /* Smooth slide and fade animation */
+    z-index: 1000 !important; /* Ensure it appears above other content */
+}
+
+.sidebar.sidebar-open {
+  opacity: 1 !important; /* Fully visible when open */
+  height: 100vh !important; /* Full screen height */
+  transform: translateX(0) !important; /* Slide in to position */
+}
+
+.sidebar .sidebar-item {
+  color: var(--text-secondary) !important;
+  border-bottom: 1px solid var(--card-border) !important;
+  transition: all 0.3s ease !important;
+  text-align: left !important; /* Align text to the left */
+  padding: 0.5rem !important; /* Match hamburger padding */
+  font-size: 1.5rem !important; /* Larger size to match */
+}
+
+.sidebar .sidebar-item:hover {
+  background-color: var(--card-hover) !important;
+  color: var(--accent-purple-glow) !important;
+  border-color: var(--accent-purple) !important;
+}
+
+.sidebar .sidebar-close {
+  font-weight: bold !important;
+  color: var(--accent-purple-light) !important;
+  background: none !important;
+  padding: 0.5rem !important; /* Match hamburger padding */
+  font-size: 1.5rem !important; /* Larger size to match */
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center !important;
+  border: none;
+}
+
+/* Hamburger Button Styling */
+.hamburger-btn {
+  background: linear-gradient(
+    135deg,
+    var(--accent-purple),
+    var(--accent-purple-light)
+  ) !important;
+  color: var(--text-primary) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 0.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3) !important;
+}
+
+.hamburger-btn:hover {
+  box-shadow: 0 6px 15px rgba(139, 92, 246, 0.5) !important;
+  transform: scale(1.05) !important;
+}
+
+.profile-pic {
+  width: max(80%, 150px);
+  height: auto;
+  object-fit: cover;
+  transform: rotate(-45deg) scaleX(-1);
+  padding-top: 50px;
+  -webkit-mask-image: radial-gradient(circle, black 50%, transparent 80%);
+  mask-image: radial-gradient(circle, black 50%, transparent 80%);
+  translate: -10px;
+  filter: drop-shadow(25px 5px 15px rgba(139, 92, 246, 0.5));
+}
+
+.sidebar-contact svg {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar-contact {
+  display: grid;
+  grid-template-columns: 2, 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.75rem 0.75rem;
+  transition: all 0.2s ease;
+  border-bottom: 0px solid var(--card-border);
+}
+.sidebar-contact:hover {
+  color: var(--accent-purple-glow);
+  background: var(--card-hover);
+  border-color: var(--accent-purple);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+  border-width: 1px;
+  border-radius: 100%;
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    opacity: 1;
+    transform: translateX(0);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  .sidebar.sidebar-open {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+}

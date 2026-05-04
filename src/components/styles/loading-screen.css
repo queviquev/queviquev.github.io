@@ -1,0 +1,102 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 24px;
+  background: rgb(255, 255, 255);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  animation: fadeout 0.8s ease-in forwards;  
+  animation-delay: 2.3s;
+  z-index: 9999;
+  mask-image: radial-gradient(circle, black 100%, rgba(0, 0, 0, 0) 100%);
+  mask-size: 400% 400%;
+  mask-position: center;
+  transition: mask-image .5s;
+}
+
+/* Otherwise, use your smooth fade */
+.loader-wrapper.fade-out {
+    visibility: hidden;
+    mask-image: radial-gradient(circle, black 0%, rgba(0, 0, 0, 0) 10%);
+}
+
+.loading-screen__track {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.loading-screen__runner {
+  position: absolute;
+  top: 50%;
+  width: 140px;
+  transform: translateY(-50%);
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  will-change: transform;
+}
+
+
+.loading-screen__runner--ozzy {
+  left: -160px;
+  animation-name: slide-right;
+  z-index: 1;
+}
+
+.loading-screen__runner--neko {
+  right: -160px;
+  animation-name: slide-right;
+  animation-delay: .5s;
+  z-index: 1;
+}
+
+@keyframes slide-right {
+  0% {
+    left: -160px;
+  }
+  100% {
+    left: calc(100% + 160px);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    right: -160px;
+  }
+  100% {
+    right: calc(100% + 160px);
+  }
+}
+
+.loading-screen__cup {
+    margin-top: 116px;
+    width: 60px;
+    align-self: center;
+    visibility: visible;
+    animation: fadeout .8s ease-in forwards;
+    animation-delay: 2.3s;
+    z-index: 2;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+

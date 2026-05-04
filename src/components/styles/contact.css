@@ -1,0 +1,56 @@
+/* Contact Section - Remove Bullets */
+#contact {
+  background: var(--midnight-purple);
+  border-radius: 16px;
+  margin: 2rem auto;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.contact ul li {
+  display: inline-block;
+  margin: 0.75rem;
+}
+
+.contact ul p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Links Styling */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-purple-glow);
+  border-color: var(--accent-purple);
+  background: var(--card-hover);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.nav-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact {
+  border-bottom: 1px solid var(--card-border);
+}
