@@ -6,6 +6,7 @@ import MeowShelter from "./images/MeowShelterThumbnail.png";
 import SevenFalls from "./images/SevenFallsThumbnail.png";
 import PythonFinal from "./images/FinalProject.png";
 import Platformer from "./images/platformer.png";
+import Queviquev from "./images/queviquevThumbnail.png"
 
 function Portfolio() {
   const [itemStates, setItemStates] = useState([false, false, false, false, false, false, false]);
@@ -119,7 +120,7 @@ function Portfolio() {
           title="Most Recent Project"
           description="This was my final project for my Front-End Frameworks course. In this course I learned how to use React, and for this project I decided to create a portfolio page that displays some of the projects I have done so far up to this point. I wanted to create a more modern and interactive portfolio page, and I think React was a great choice for that. This project is still a work in progress, but I'm really happy with how it turned out so far. If it looks familiar, it's because this is the project you're currently viewing. I wanted to create a portfolio page that not only showcases my projects, but also demonstrates my skills in React and web development in general."
           href="https://queviquev.github.io/"
-          img={PythonFinal}
+          img={Queviquev}
           isOpen={itemStates[6]}
           onToggle={() => toggleItem(6)}
         />

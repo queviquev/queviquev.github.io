@@ -5,6 +5,7 @@
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -20,6 +21,7 @@
   mask-position: center;
   transition: mask-image .5s;
 }
+
 
 /* Otherwise, use your smooth fade */
 .loader-wrapper.fade-out {
@@ -88,6 +90,12 @@
     animation: fadeout .8s ease-in forwards;
     animation-delay: 2.3s;
     z-index: 2;
+}
+
+.loading-screen h1 {
+  color: var(--midnight-purple-light);
+  align-self: center;
+  font-size: 1.5rem;
 }
 
 @keyframes fadeout {

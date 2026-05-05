@@ -27,6 +27,7 @@ function LoadingScreen() {
 
     return (
         <div className={`loading-screen ${isLoading ? 'fade-out' : ''}`}>
+            
             <div className="loading-screen__track">
                 <img
                     className="loading-screen__runner loading-screen__runner--ozzy"
@@ -43,6 +44,7 @@ function LoadingScreen() {
                     alt="Neko running across the screen"
                 />
             </div>
+            <h1>Loading...</h1>
         </div>
     );
 }
